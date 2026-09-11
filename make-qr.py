@@ -2,8 +2,7 @@ import qrcode
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-token = "?eo_token=8bfda169d4f1b71138ac17cf3e7c2b0d&eo_time=1789129713"
-base = "https://jkc-club-recruit-web-oodut5jc.edgeone.cool" + token
+base = "https://aqr325.github.io/club-recruit-web"
 pages = [
     ("首页", base + "/v1-cute.html"),
     ("了解我们", base + "/about.html"),
