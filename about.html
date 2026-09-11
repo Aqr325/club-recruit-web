@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>了解我们 · 科技创新工作室</title>
+  <meta name="description" content="中原工学院科技创新工作室：在校团委领导下服务全校同学科创实践，挑战杯等赛事全程陪跑。">
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    section { padding: 36px 24px; position: relative; }
+
+    .topnav {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(255,245,248,0.92); backdrop-filter: blur(8px);
+      display: flex; gap: 6px; padding: 10px 12px; justify-content: center;
+      border-bottom: 1px solid rgba(255,209,220,0.6);
+    }
+    .topnav a {
+      flex: 1; max-width: 110px; text-align: center; padding: 9px 4px; border-radius: var(--radius-full);
+      font-size: 13.5px; font-weight: 700; text-decoration: none; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--secondary); transition: all .15s ease;
+    }
+    .topnav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .back-hero { text-align: center; padding: 30px 24px 10px; }
+    .back-hero .emoji { font-size: 56px; }
+    h1 { font-size: 26px; font-weight: 800; margin-top: 8px; }
+    .section-title { font-size: 22px; font-weight: 800; margin-bottom: 10px; margin-top: 8px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+
+    .card {
+      background: var(--surface); border-radius: var(--radius-lg); padding: 22px;
+      margin-bottom: 16px; box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      border: 1px solid rgba(255,209,220,0.5);
+    }
+    .feature { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+    .feature:last-child { margin-bottom: 0; }
+    .feature-icon { font-size: 28px; line-height: 1; }
+    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+    .feature p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    .footer-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; padding: 14px 22px 22px;
+      background: linear-gradient(transparent, var(--bg) 50%); display: flex; gap: 12px; justify-content: center; z-index: 10;
+    }
+    .footer-cta .btn { flex: 1; max-width: 260px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 15px 30px; border-radius: var(--radius-full); text-decoration: none; font-size: 16px; font-weight: 700; transition: transform .15s ease; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(199,58,106,0.28); }
+    .spacer { height: 90px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="v1-cute.html" data-page="home">🏠 首页</a>
+    <a href="about.html" data-page="about">💡 了解</a>
+    <a href="departments.html" data-page="dept">📋 部门</a>
+    <a href="join.html" data-page="join">✍️ 报名</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="back-hero">
+      <div class="emoji">💡</div>
+      <h1>了解我们</h1>
+    </div>
+
+    <section class="reveal">
+      <div class="section-title">我们是谁</div>
+      <div class="section-sub">在校团委直接领导下，服务全校同学科技创新创业实践。</div>
+      <div class="card">
+        <p style="font-size:15px;line-height:1.8;color:var(--muted);">以提高学生科技创新创业能力、服务学校科技创新创业工作为宗旨，以"锐意创新，迎接挑战"为理念，以营造浓厚的科技创新与创业文化氛围为中心，以开展丰富多样的科创实践活动为目标，用心服务广大同学。</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="section-title">在这里你能获得</div>
+      <div class="section-sub">不只是综测加分，更是真本事</div>
+      <div class="card">
+        <div class="feature"><div class="feature-icon">🏆</div><div><h3>竞赛实战</h3><p>挑战杯、大创等赛事全程陪跑，从报名到答辩有人带</p></div></div>
+        <div class="feature"><div class="feature-icon">🚀</div><div><h3>项目孵化</h3><p>从 0 到 1 打磨你的科创项目，把点子变成作品</p></div></div>
+        <div class="feature"><div class="feature-icon">🤝</div><div><h3>同频伙伴</h3><p>遇见一群爱玩技术、敢想敢做的队友，一起搞事情</p></div></div>
+        <div class="feature"><div class="feature-icon">📸</div><div><h3>多元技能</h3><p>设计、摄影、新媒体、活动策划，软实力全 get</p></div></div>
+      </div>
+    </section>
+
+    <section class="reveal" style="text-align:center;">
+      <div class="section-sub">看完了？四大部门哪一个最戳你 👇</div>
+      <a class="btn btn-primary" href="departments.html" style="width:100%;max-width:280px;">看看四大部门 📋</a>
+    </section>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="join.html">立即报名 🚀</a>
+  </div>
+
+  <script>
+    (function () {
+      var qs = location.search;
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (h && !h.startsWith('http') && !h.startsWith('tel:') && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('javascript:')) {
+          if (qs && h.indexOf('?') === -1) a.setAttribute('href', h + qs);
+        }
+      });
+      var path = location.pathname.split('/').pop() || 'about.html';
+      var map = { 'v1-cute.html': 'home', 'about.html': 'about', 'departments.html': 'dept', 'join.html': 'join' };
+      var cur = map[path];
+      if (cur) { var el = document.querySelector('.topnav a[data-page="' + cur + '"]'); if (el) el.classList.add('active'); }
+    })();
+    var reveals = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  </script>
+</body>
+</html>

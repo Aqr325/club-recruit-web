@@ -1,0 +1,6 @@
+# EdgeOne build artifacts
+.edgeone/
+
+# OS / editor
+.DS_Store
+Thumbs.db

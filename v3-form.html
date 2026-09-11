@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>科技创新工作室 · 报名表</title>
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 28px 22px 140px; }
+    .topbar { display: flex; align-items: center; margin-bottom: 20px; }
+    .back { color: var(--muted); text-decoration: none; font-size: 14px; }
+    .hero {
+      text-align: center;
+      padding: 20px 0 28px;
+    }
+    .hero-emoji { font-size: 64px; line-height: 1; margin-bottom: 14px; }
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .hero p { color: var(--muted); font-size: 15px; }
+    .form-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      margin-bottom: 20px;
+    }
+    .form-title { font-size: 18px; font-weight: 700; margin-bottom: 18px; }
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--secondary);
+      border-radius: 14px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-color: var(--primary); }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .dept-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .dept-option {
+      position: relative;
+    }
+    .dept-option input { display: none; }
+    .dept-option label {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border: 1.5px solid var(--secondary);
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .dept-option input:checked + label {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(199,58,106,0.28);
+    }
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+    }
+    .contact-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,209,220,0.5);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-label { font-size: 14px; color: var(--muted); }
+    .contact-value { font-size: 14px; font-weight: 600; }
+    .copy-btn {
+      background: var(--secondary);
+      color: var(--text);
+      border: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .toast {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s, transform .25s;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a class="back" href="index.html">← 返回方案</a></div>
+
+    <div class="hero">
+      <div class="hero-emoji">🐰📝</div>
+      <h1>填写报名表</h1>
+      <p>选择意向部门，提交后我们会尽快联系你</p>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">基本信息</div>
+      <form id="joinForm">
+        <div class="field">
+          <label for="name">姓名 *</label>
+          <input type="text" id="name" name="name" placeholder="请输入你的姓名" required>
+        </div>
+        <div class="field">
+          <label for="major">学院 / 专业 *</label>
+          <input type="text" id="major" name="major" placeholder="如：电子信息学院 通信工程" required>
+        </div>
+        <div class="field">
+          <label for="phone">手机号 *</label>
+          <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+        </div>
+        <div class="field">
+          <label>意向部门 *</label>
+          <div class="dept-options">
+            <div class="dept-option"><input type="radio" name="dept" id="d1" value="综合事务部" required><label for="d1">📋 综合事务部</label></div>
+            <div class="dept-option"><input type="radio" name="dept" id="d2" value="赛事运营部"><label for="d2">🏅 赛事运营部</label></div>
+            <div class="dept-option"><input type="radio" name="dept" id="d3" value="项目活动部"><label for="d3">💡 项目活动部</label></div>
+            <div class="dept-option"><input type="radio" name="dept" id="d4" value="宣传推广部"><label for="d4">📢 宣传推广部</label></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="reason">加入理由 / 个人优势</label>
+          <textarea id="reason" name="reason" placeholder="简单说说你为什么想加入我们"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">提交报名表</button>
+      </form>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-title">更多联系方式</div>
+      <div class="contact-row">
+        <span class="contact-label">招新 QQ 群</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="contact-value" id="qqGroup">123456789</span>
+          <button class="copy-btn" data-target="qqGroup">复制</button>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">负责人微信</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="contact-value" id="wechat">xxxxxx</span>
+          <button class="copy-btn" data-target="wechat">复制</button>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">负责人电话</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="contact-value">138-0000-0000</span>
+          <a class="copy-btn" style="text-decoration:none;display:inline-flex;" href="tel:13800000000">拨打</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    function show(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = document.getElementById(btn.dataset.target).textContent;
+        navigator.clipboard.writeText(text).then(() => show('已复制：' + text));
+      });
+    });
+
+    document.getElementById('joinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      console.log('报名表数据：', data);
+      show('报名提交成功！我们会尽快联系你 💕');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

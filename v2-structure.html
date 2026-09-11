@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>科技创新工作室 · 组织架构</title>
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 32px 22px 110px; }
+    .topbar { display: flex; align-items: center; margin-bottom: 28px; }
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; }
+    .lead { color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 28px; }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .stat {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 18px 10px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+    }
+    .stat-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); }
+    .org-tree {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      text-align: center;
+    }
+    .org-node {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+    .org-line {
+      width: 2px;
+      height: 24px;
+      background: var(--secondary);
+      margin: 0 auto 18px;
+    }
+    .org-children {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .org-child {
+      background: var(--secondary);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .dept {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+      border-left: 4px solid var(--primary-light);
+    }
+    .dept-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .dept-icon { font-size: 26px; }
+    .dept-name { font-size: 18px; font-weight: 700; }
+    .dept-size {
+      margin-left: auto;
+      background: var(--secondary);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .dept-desc { color: var(--muted); font-size: 14px; line-height: 1.65; margin-bottom: 12px; }
+    .duty-list { list-style: none; }
+    .duty-list li {
+      font-size: 13px;
+      color: var(--text);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .duty-list li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+    .footer-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 22px 22px;
+      background: linear-gradient(transparent, var(--bg) 50%);
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      z-index: 10;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(199,58,106,0.25);
+      flex: 1;
+      max-width: 220px;
+    }
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--text);
+      flex: 1;
+      max-width: 220px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a class="back" href="index.html">← 返回方案</a></div>
+    <h1>组织架构</h1>
+    <p class="lead">校团委直属学生组织，主席团统筹，四部门协同，70 人规模。</p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="stat-value">70</div><div class="stat-label">社团总人数</div></div>
+      <div class="stat"><div class="stat-value">2</div><div class="stat-label">主席团成员</div></div>
+      <div class="stat"><div class="stat-value">4</div><div class="stat-label">职能部门</div></div>
+    </div>
+
+    <div class="org-tree">
+      <div class="org-node">主席团 · 2 人</div>
+      <div class="org-line"></div>
+      <div class="org-children">
+        <div class="org-child">综合事务部</div>
+        <div class="org-child">赛事运营部</div>
+        <div class="org-child">项目活动部</div>
+        <div class="org-child">宣传推广部</div>
+      </div>
+    </div>
+
+    <div class="dept">
+      <div class="dept-header">
+        <div class="dept-icon">📋</div>
+        <div class="dept-name">综合事务部</div>
+        <div class="dept-size">17 人</div>
+      </div>
+      <div class="dept-desc">社团核心内务统筹部门，负责社团日常运转保障工作。</div>
+      <ul class="duty-list">
+        <li>例会组织、日常考勤、值班安排、人员考核评定</li>
+        <li>文件整理、资料归档、活动报备、工作总结撰写</li>
+        <li>物资台账、基础经费统计、内部制度落实</li>
+      </ul>
+    </div>
+
+    <div class="dept">
+      <div class="dept-header">
+        <div class="dept-icon">🏅</div>
+        <div class="dept-name">赛事运营部</div>
+        <div class="dept-size">17 人</div>
+      </div>
+      <div class="dept-desc">负责全校各类科创竞赛的落地统筹，核心承接挑战杯等赛事。</div>
+      <ul class="duty-list">
+        <li>赛事通知发布、全校报名与材料收集初审</li>
+        <li>场地布置、参赛答疑、答辩会务组织</li>
+        <li>赛后数据统计、获奖信息整理、赛事复盘</li>
+      </ul>
+    </div>
+
+    <div class="dept">
+      <div class="dept-header">
+        <div class="dept-icon">💡</div>
+        <div class="dept-name">项目活动部</div>
+        <div class="dept-size">17 人</div>
+      </div>
+      <div class="dept-desc">聚焦创新创业项目培育与科创氛围建设。</div>
+      <ul class="duty-list">
+        <li>大创项目申报、中期检查、结题验收全程跟进</li>
+        <li>组织创新创业分享沙龙、经验交流会</li>
+        <li>开展零基础科创培训，打磨孵化优质项目</li>
+      </ul>
+    </div>
+
+    <div class="dept">
+      <div class="dept-header">
+        <div class="dept-icon">📢</div>
+        <div class="dept-name">宣传推广部</div>
+        <div class="dept-size">17 人</div>
+      </div>
+      <div class="dept-desc">负责社团对外宣传、品牌建设与科创氛围营造。</div>
+      <ul class="duty-list">
+        <li>活动摄影记录、新媒体公众号运营、推文新闻稿编辑</li>
+        <li>海报设计、短视频拍摄与剪辑</li>
+        <li>科创技能培训、社团成果宣传、打造校级特色品牌</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="v3-form.html">我要报名</a>
+    <a class="btn btn-secondary" href="v1-cute.html">粉萌版</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>四大部门 · 科创部新伙伴共创计划</title>
+  <meta name="description" content="科技创新工作室四大部门介绍：综合事务部、赛事运营部、项目活动部、宣传推广部。">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #dbeafe;
+      --tertiary: #0ea5e9;
+      --bg: #f0f6ff;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    section { padding: 28px 24px 40px; position: relative; }
+
+    .topnav {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(240,246,255,0.94); backdrop-filter: blur(10px);
+      display: flex; gap: 6px; padding: 10px 12px; justify-content: center;
+      border-bottom: 1px solid rgba(219,234,254,0.8);
+    }
+    .topnav a {
+      flex: 1; max-width: 110px; text-align: center; padding: 9px 4px; border-radius: var(--radius-full);
+      font-size: 13.5px; font-weight: 700; text-decoration: none; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--secondary); transition: all .15s ease;
+    }
+    .topnav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .back-hero { text-align: center; padding: 26px 24px 6px; }
+    .back-hero .emoji { font-size: 52px; }
+    h1 { font-size: 26px; font-weight: 800; margin-top: 6px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 16px; text-align: center; }
+
+    .dept-detail {
+      background: var(--surface); border-radius: var(--radius-lg); padding: 22px;
+      box-shadow: 0 8px 24px rgba(37,99,235,0.08); border: 1px solid rgba(219,234,254,0.7);
+      margin-bottom: 16px;
+    }
+    .dept-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .dept-icon {
+      width: 52px; height: 52px; border-radius: 16px; background: var(--secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0;
+    }
+    .dept-title { font-size: 18px; font-weight: 800; }
+    .dept-tag { display: inline-block; background: var(--secondary); color: var(--primary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); margin-top: 4px; }
+    .dept-detail p { color: var(--muted); font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
+    .dept-detail ul { padding-left: 18px; color: var(--muted); font-size: 14px; line-height: 1.85; margin-bottom: 14px; }
+    .dept-detail li { margin-bottom: 4px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 24px; border-radius: var(--radius-full); text-decoration: none; font-size: 14px; font-weight: 700; transition: transform .15s ease; border: none; cursor: pointer; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 8px 22px rgba(37,99,235,0.25); }
+
+    .footer-cta { position: fixed; bottom: 0; left: 0; right: 0; padding: 14px 22px 22px; background: linear-gradient(transparent, var(--bg) 50%); display: flex; gap: 12px; justify-content: center; z-index: 10; }
+    .footer-cta .btn { flex: 1; max-width: 260px; }
+    .spacer { height: 90px; }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="index.html" data-page="home">🏠 首页</a>
+    <a href="about.html" data-page="about">💡 了解</a>
+    <a href="departments.html" data-page="dept">📋 部门</a>
+    <a href="join.html" data-page="join">✍️ 报名</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="back-hero">
+      <div class="emoji">📋</div>
+      <h1>四大部门</h1>
+      <div class="section-sub">找到最适合你的方向，点击查看详情</div>
+    </div>
+
+    <section>
+      <div class="dept-detail">
+        <div class="dept-header">
+          <div class="dept-icon">📋</div>
+          <div>
+            <div class="dept-title">综合事务部</div>
+            <div class="dept-tag">社团运转中枢</div>
+          </div>
+        </div>
+        <p>负责工作室日常运转与后勤保障，是连接各部门的枢纽。</p>
+        <ul>
+          <li>例会组织、考勤记录与会议纪要的整理归档</li>
+          <li>社团资料、物资与经费管理</li>
+          <li>活动场地申请、人员协调与对外联络</li>
+        </ul>
+        <a class="btn btn-primary" href="join.html?dept=综合事务部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-header">
+          <div class="dept-icon">🏅</div>
+          <div>
+            <div class="dept-title">赛事运营部</div>
+            <div class="dept-tag">竞赛驱动核心</div>
+          </div>
+        </div>
+        <p>聚焦「挑战杯」「大创」等核心赛事，负责赛事全流程运营。</p>
+        <ul>
+          <li>赛事信息收集、报名组织与时间节点管理</li>
+          <li>赛前组队、材料审核与项目辅导对接</li>
+          <li>赛后复盘、成果沉淀与经验分享</li>
+        </ul>
+        <a class="btn btn-primary" href="join.html?dept=赛事运营部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-header">
+          <div class="dept-icon">💡</div>
+          <div>
+            <div class="dept-title">项目活动部</div>
+            <div class="dept-tag">项目孵化平台</div>
+          </div>
+        </div>
+        <p>负责项目孵化、沙龙培训与经验分享，把创意变成可落地的作品。</p>
+        <ul>
+          <li>项目立项、孵化与阶段性打磨</li>
+          <li>技术沙龙、经验分享与技能培训</li>
+          <li>跨部门协作，推动项目从 0 到 1</li>
+        </ul>
+        <a class="btn btn-primary" href="join.html?dept=项目活动部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-header">
+          <div class="dept-icon">📢</div>
+          <div>
+            <div class="dept-title">宣传推广部</div>
+            <div class="dept-tag">品牌发声窗口</div>
+          </div>
+        </div>
+        <p>负责工作室对外形象、招新传播与活动宣传。</p>
+        <ul>
+          <li>公众号推文、海报设计与视频制作</li>
+          <li>活动现场摄影、直播与素材管理</li>
+          <li>社团品牌建设与对外传播策略</li>
+        </ul>
+        <a class="btn btn-primary" href="join.html?dept=宣传推广部">选这个部门 →</a>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="join.html">立即报名 →</a>
+  </div>
+
+  <script>
+    (function () {
+      var qs = location.search;
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (h && !h.startsWith('http') && !h.startsWith('tel:') && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('javascript:')) {
+          if (qs && h.indexOf('?') === -1) a.setAttribute('href', h + qs);
+        }
+      });
+      var path = location.pathname.split('/').pop() || 'departments.html';
+      var map = { 'index.html': 'home', 'about.html': 'about', 'departments.html': 'dept', 'join.html': 'join' };
+      var cur = map[path];
+      if (cur) { var el = document.querySelector('.topnav a[data-page="' + cur + '"]'); if (el) el.classList.add('active'); }
+    })();
+  </script>
+</body>
+</html>

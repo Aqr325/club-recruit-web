@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>科技创新工作室 · 招新</title>
+  <meta name="description" content="中原工学院科技创新工作室 2026 秋季招新：锐意创新，迎接挑战。四大部门等你加入！">
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    section { padding: 40px 24px; position: relative; }
+
+    /* 顶部导航 */
+    .topnav {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(255,245,248,0.92);
+      backdrop-filter: blur(8px);
+      display: flex; gap: 6px; padding: 10px 12px;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255,209,220,0.6);
+    }
+    .topnav a {
+      flex: 1; max-width: 110px; text-align: center;
+      padding: 9px 4px; border-radius: var(--radius-full);
+      font-size: 13.5px; font-weight: 700; text-decoration: none;
+      color: var(--muted); background: var(--surface);
+      border: 1px solid var(--secondary);
+      transition: all .15s ease;
+    }
+    .topnav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .hero {
+      min-height: 86vh;
+      display: flex; flex-direction: column; justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,107,157,0.18), transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(255,154,60,0.1), transparent 35%);
+    }
+    .mascot { font-size: 88px; line-height: 1; margin-bottom: 18px; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .badge {
+      display: inline-block; background: var(--secondary); color: var(--primary);
+      font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: var(--radius-full); margin-bottom: 16px;
+    }
+    h1 { font-size: 36px; line-height: 1.15; font-weight: 800; margin-bottom: 16px; }
+    .hero p { color: var(--muted); font-size: 16px; line-height: 1.65; margin-bottom: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 15px 30px; border-radius: var(--radius-full); text-decoration: none;
+      font-size: 16px; font-weight: 700; transition: transform .15s ease;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(199,58,106,0.28); }
+    .btn-secondary { background: var(--secondary); color: var(--text); }
+
+    .section-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+    /* 入口卡片 */
+    .entry-card {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--surface); border-radius: var(--radius-lg);
+      padding: 18px 20px; margin-bottom: 14px; text-decoration: none; color: var(--text);
+      box-shadow: 0 6px 18px rgba(199,58,106,0.07);
+      border: 1px solid rgba(255,209,220,0.5);
+    }
+    .entry-icon { font-size: 30px; }
+    .entry-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+    .entry-card p { font-size: 13px; color: var(--muted); }
+    .entry-arrow { margin-left: auto; color: var(--primary); font-size: 20px; font-weight: 800; }
+
+    .dept-card {
+      background: var(--surface); border-radius: var(--radius-lg); padding: 16px 18px;
+      margin-bottom: 12px; display: flex; align-items: center; gap: 14px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+      text-decoration: none; color: var(--text);
+    }
+    .dept-icon {
+      width: 48px; height: 48px; border-radius: 14px; background: var(--secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+    }
+    .dept-name { font-size: 15px; font-weight: 700; }
+    .dept-desc { font-size: 12.5px; color: var(--muted); }
+
+    .footer-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; padding: 14px 22px 22px;
+      background: linear-gradient(transparent, var(--bg) 50%);
+      display: flex; gap: 12px; justify-content: center; z-index: 10;
+    }
+    .footer-cta .btn { flex: 1; max-width: 260px; }
+    .spacer { height: 90px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="v1-cute.html" data-page="home">🏠 首页</a>
+    <a href="about.html" data-page="about">💡 了解</a>
+    <a href="departments.html" data-page="dept">📋 部门</a>
+    <a href="join.html" data-page="join">✍️ 报名</a>
+  </nav>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="mascot">🐰✨</div>
+      <div class="badge">2026 秋季招新</div>
+      <h1>科技创新工作室<br>JOIN US</h1>
+      <p>锐意创新，迎接挑战<br>这里不只是社团，更是你大学科创之路的起点</p>
+      <a class="btn btn-primary" href="join.html">立即报名 🚀</a>
+      <a class="btn btn-secondary" href="about.html">了解我们</a>
+    </section>
+
+    <section class="reveal">
+      <div class="section-title">从这里开始</div>
+      <div class="section-sub">点一点，看看哪一面最吸引你</div>
+      <a class="entry-card" href="about.html">
+        <span class="entry-icon">💡</span>
+        <div><h3>了解我们</h3><p>社团是做什么的？你能收获什么</p></div>
+        <span class="entry-arrow">›</span>
+      </a>
+      <a class="entry-card" href="departments.html">
+        <span class="entry-icon">📋</span>
+        <div><h3>四大部门</h3><p>总有一款适合你</p></div>
+        <span class="entry-arrow">›</span>
+      </a>
+      <a class="entry-card" href="join.html">
+        <span class="entry-icon">✍️</span>
+        <div><h3>加入我们</h3><p>填张表，1 分钟报名</p></div>
+        <span class="entry-arrow">›</span>
+      </a>
+    </section>
+
+    <section class="reveal">
+      <div class="section-title">四大部门速览</div>
+      <div class="section-sub">点任意部门看详细介绍</div>
+      <a class="dept-card" href="departments.html">
+        <div class="dept-icon">📋</div>
+        <div><div class="dept-name">综合事务部</div><div class="dept-desc">例会考勤 · 资料归档 · 物资经费</div></div>
+        <span class="entry-arrow">›</span>
+      </a>
+      <a class="dept-card" href="departments.html">
+        <div class="dept-icon">🏅</div>
+        <div><div class="dept-name">赛事运营部</div><div class="dept-desc">挑战杯 · 大创 · 赛事全流程</div></div>
+        <span class="entry-arrow">›</span>
+      </a>
+      <a class="dept-card" href="departments.html">
+        <div class="dept-icon">💡</div>
+        <div><div class="dept-name">项目活动部</div><div class="dept-desc">项目孵化 · 沙龙培训 · 经验分享</div></div>
+        <span class="entry-arrow">›</span>
+      </a>
+      <a class="dept-card" href="departments.html">
+        <div class="dept-icon">📢</div>
+        <div><div class="dept-name">宣传推广部</div><div class="dept-desc">摄影推文 · 海报视频 · 品牌运营</div></div>
+        <span class="entry-arrow">›</span>
+      </a>
+    </section>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="join.html">立即报名 🚀</a>
+  </div>
+
+  <script>
+    // 预览 token 拼接：把当前 URL 的查询参数拼到站内相对链接，避免带 token 链接下相对跳转 401
+    (function () {
+      var qs = location.search;
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (h && !h.startsWith('http') && !h.startsWith('tel:') && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('javascript:')) {
+          if (qs && h.indexOf('?') === -1) a.setAttribute('href', h + qs);
+        }
+      });
+      var path = location.pathname.split('/').pop() || 'v1-cute.html';
+      var map = { 'v1-cute.html': 'home', 'about.html': 'about', 'departments.html': 'dept', 'join.html': 'join' };
+      var cur = map[path];
+      if (cur) { var el = document.querySelector('.topnav a[data-page="' + cur + '"]'); if (el) el.classList.add('active'); }
+    })();
+
+    var reveals = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  </script>
+</body>
+</html>

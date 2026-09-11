@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>加入我们 · 科创部新伙伴共创计划</title>
+  <meta name="description" content="加入科技创新工作室/科创部，填写报名信息，选择意向部门，1 分钟完成申请。">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #dbeafe;
+      --tertiary: #0ea5e9;
+      --bg: #f0f6ff;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    section { padding: 28px 24px 40px; position: relative; }
+
+    .topnav {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(240,246,255,0.94); backdrop-filter: blur(10px);
+      display: flex; gap: 6px; padding: 10px 12px; justify-content: center;
+      border-bottom: 1px solid rgba(219,234,254,0.8);
+    }
+    .topnav a {
+      flex: 1; max-width: 110px; text-align: center; padding: 9px 4px; border-radius: var(--radius-full);
+      font-size: 13.5px; font-weight: 700; text-decoration: none; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--secondary); transition: all .15s ease;
+    }
+    .topnav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .back-hero { text-align: center; padding: 26px 24px 6px; }
+    .back-hero .emoji { font-size: 52px; }
+    h1 { font-size: 26px; font-weight: 800; margin-top: 6px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 16px; text-align: center; }
+
+    .card { background: var(--surface); border-radius: var(--radius-lg); padding: 22px; box-shadow: 0 8px 24px rgba(37,99,235,0.08); border: 1px solid rgba(219,234,254,0.7); }
+
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 13px 16px; border: 1.5px solid var(--secondary); border-radius: 14px;
+      font-size: 15px; font-family: inherit; background: #fff; color: var(--text); outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary); }
+    .field textarea { min-height: 80px; resize: vertical; }
+    .dept-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .dept-option input { display: none; }
+    .dept-option label {
+      display: block; text-align: center; padding: 12px 8px; border: 1.5px solid var(--secondary);
+      border-radius: 14px; font-size: 13.5px; font-weight: 600; cursor: pointer; transition: all .15s ease;
+    }
+    .dept-option input:checked + label { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .contact-card { background: var(--surface); border-radius: var(--radius-lg); padding: 22px; box-shadow: 0 6px 18px rgba(37,99,235,0.06); margin-top: 18px; }
+    .contact-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+    .contact-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(219,234,254,0.7); }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-label { font-size: 14px; color: var(--muted); }
+    .contact-value { font-size: 14px; font-weight: 600; }
+    .copy-btn { background: var(--secondary); color: var(--text); border: none; padding: 6px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; }
+    .form-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 10px; line-height: 1.6; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 15px 30px; border-radius: var(--radius-full); text-decoration: none; font-size: 16px; font-weight: 700; transition: transform .15s ease; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(37,99,235,0.28); }
+
+    .footer-cta { position: fixed; bottom: 0; left: 0; right: 0; padding: 14px 22px 22px; background: linear-gradient(transparent, var(--bg) 50%); display: flex; gap: 12px; justify-content: center; z-index: 10; }
+    .footer-cta .btn { flex: 1; max-width: 260px; }
+    .spacer { height: 90px; }
+    .toast {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.96);
+      background: rgba(15,23,42,0.85); color: #fff; padding: 14px 26px; border-radius: 14px;
+      font-size: 14px; text-align: center; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="index.html" data-page="home">🏠 首页</a>
+    <a href="about.html" data-page="about">💡 了解</a>
+    <a href="departments.html" data-page="dept">📋 部门</a>
+    <a href="join.html" data-page="join">✍️ 报名</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="back-hero">
+      <div class="emoji">✍️</div>
+      <h1>加入我们</h1>
+      <div class="section-sub">填好信息，前往腾讯问卷 1 分钟完成报名 🚀</div>
+    </div>
+
+    <section>
+      <div class="card">
+        <form id="joinForm">
+          <div class="field">
+            <label for="name">姓名 *</label>
+            <input type="text" id="name" name="name" placeholder="请输入你的姓名" required>
+          </div>
+          <div class="field">
+            <label for="major">学院 / 专业 *</label>
+            <input type="text" id="major" name="major" placeholder="如：电子信息学院 通信工程" required>
+          </div>
+          <div class="field">
+            <label for="phone">手机号 *</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+          </div>
+          <div class="field">
+            <label>意向部门 *</label>
+            <div class="dept-options">
+              <div class="dept-option"><input type="radio" name="dept" id="d1" value="综合事务部" required><label for="d1">📋 综合事务部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d2" value="赛事运营部"><label for="d2">🏅 赛事运营部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d3" value="项目活动部"><label for="d3">💡 项目活动部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d4" value="宣传推广部"><label for="d4">📢 宣传推广部</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="reason">加入理由 / 个人优势</label>
+            <textarea id="reason" name="reason" placeholder="简单说说你为什么想加入我们"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">提交报名表 🚀</button>
+        </form>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-title">更多联系方式</div>
+        <div class="contact-row">
+          <span class="contact-label">招新 QQ 群</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value" id="qqGroup">123456789</span>
+            <button class="copy-btn" data-target="qqGroup">复制</button>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">负责人微信</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value" id="wechat">xxxxxx</span>
+            <button class="copy-btn" data-target="wechat">复制</button>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">负责人电话</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value">138-0000-0000</span>
+            <a class="copy-btn" href="tel:13800000000">拨打</a>
+          </div>
+        </div>
+        <div class="form-note">报名信息仅用于社团招新联系，不会对外公开 🔒</div>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="index.html">返回首页 🏠</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    (function () {
+      var qs = location.search;
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (h && !h.startsWith('http') && !h.startsWith('tel:') && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('javascript:')) {
+          if (qs && h.indexOf('?') === -1) a.setAttribute('href', h + qs);
+        }
+      });
+      var path = location.pathname.split('/').pop() || 'join.html';
+      var map = { 'index.html': 'home', 'about.html': 'about', 'departments.html': 'dept', 'join.html': 'join' };
+      var cur = map[path];
+      if (cur) { var el = document.querySelector('.topnav a[data-page="' + cur + '"]'); if (el) el.classList.add('active'); }
+
+      try {
+        var dept = new URLSearchParams(qs).get('dept');
+        if (dept) {
+          var radios = document.querySelectorAll('input[name="dept"]');
+          radios.forEach(function (r) { if (r.value === dept) r.checked = true; });
+        }
+      } catch (e) {}
+    })();
+
+    var toast = document.getElementById('toast');
+    function show(msg) { toast.textContent = msg; toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 2500); }
+
+    document.querySelectorAll('.copy-btn[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = document.getElementById(btn.dataset.target).textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { show('已复制：' + text); }).catch(function () { show(text); });
+        } else { show(text); }
+      });
+    });
+
+    // ===== 报名数据收集：接入腾讯问卷 =====
+    // 把腾讯问卷「填写链接」填到下面（形如 https://www.wjx.cn/wj/xxxxxxx.aspx）。
+    // 留空 '' 时走兜底模式：复制报名信息，提示用户发到招新群。
+    var WJ_URL = '';
+
+    if (WJ_URL) {
+      var sb = document.querySelector('#joinForm button[type="submit"]');
+      if (sb) sb.textContent = '前往腾讯问卷填写 🚀';
+    }
+
+    document.getElementById('joinForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var formData = new FormData(e.target);
+      var data = Object.fromEntries(formData.entries());
+      if (WJ_URL) {
+        window.location.href = WJ_URL;
+        return;
+      }
+      var text = '【社团报名】姓名：' + (data.name || '') + '｜学院/专业：' + (data.major || '') + '｜手机：' + (data.phone || '') + '｜意向部门：' + (data.dept || '') + '｜加入理由：' + (data.reason || '');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { show('已复制报名信息，请粘贴到招新群 🚀'); }).catch(function () { show(text); });
+      } else { show(text); }
+    });
+  </script>
+</body>
+</html>

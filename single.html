@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>科技创新工作室 · 招新</title>
+  <meta name="description" content="中原工学院科技创新工作室招新：锐意创新，迎接挑战。四大部门等你加入！">
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 0 22px 120px; }
+    section { padding: 36px 0; }
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--secondary), transparent); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      background: linear-gradient(160deg, #ff8fb3 0%, #ff6b9d 45%, #c73a6a 100%);
+      color: #fff;
+      margin: 0 -22px;
+      padding: 56px 28px 48px;
+      border-radius: 0 0 36px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+    }
+    .hero::before { width: 160px; height: 160px; top: -50px; left: -40px; }
+    .hero::after { width: 120px; height: 120px; bottom: -40px; right: -30px; }
+    .hero-emoji { font-size: 56px; line-height: 1; margin-bottom: 14px; position: relative; }
+    .hero h1 { font-size: 30px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 10px; position: relative; }
+    .hero .slogan {
+      display: inline-block;
+      background: rgba(255,255,255,0.22);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .hero .tagline { font-size: 13px; opacity: 0.92; line-height: 1.6; position: relative; }
+    .scroll-hint {
+      margin-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      color: var(--primary);
+      padding: 12px 26px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    /* 简介卡片 */
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .intro-card {
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 18px 16px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+    }
+    .intro-card .ic-emoji { font-size: 26px; margin-bottom: 8px; }
+    .intro-card .ic-label { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .intro-card .ic-text { font-size: 13px; color: var(--text); line-height: 1.55; }
+
+    /* 数据栏 */
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stat {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 18px 8px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+    }
+    .stat-value { font-size: 30px; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 12px; color: var(--muted); }
+
+    /* 组织架构 */
+    .org-tree {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      text-align: center;
+    }
+    .org-node {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      padding: 11px 26px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .org-line { width: 2px; height: 20px; background: var(--secondary); margin: 12px auto; }
+    .org-children { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .org-child {
+      background: var(--secondary);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .dept {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+      border-left: 4px solid var(--primary-light);
+    }
+    .dept-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .dept-icon { font-size: 24px; }
+    .dept-name { font-size: 17px; font-weight: 700; }
+    .dept-size {
+      margin-left: auto;
+      background: var(--secondary);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+    .dept-desc { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 10px; }
+    .duty-list { list-style: none; }
+    .duty-list li {
+      font-size: 13px;
+      color: var(--text);
+      padding: 5px 0 5px 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .duty-list li::before { content: "•"; color: var(--primary); font-weight: 700; position: absolute; left: 0; }
+
+    /* 报名表单 */
+    .form-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+    }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--secondary);
+      border-radius: 14px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary); }
+    .field textarea { min-height: 84px; resize: vertical; }
+    .dept-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .dept-option input { display: none; }
+    .dept-option label {
+      display: block;
+      text-align: center;
+      padding: 12px 8px;
+      border: 1.5px solid var(--secondary);
+      border-radius: 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .dept-option input:checked + label { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(199,58,106,0.28); }
+
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(199,58,106,0.06);
+      margin-top: 16px;
+    }
+    .contact-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,209,220,0.5);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-label { font-size: 14px; color: var(--muted); }
+    .contact-value { font-size: 14px; font-weight: 600; }
+    .copy-btn {
+      background: var(--secondary);
+      color: var(--text);
+      border: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+    }
+
+    /* 底部固定 CTA */
+    .footer-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 12px 22px 18px;
+      background: linear-gradient(transparent, var(--bg) 35%);
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+    .footer-cta .btn-primary { max-width: 320px; }
+
+    .toast {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      background: rgba(0,0,0,0.78);
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s, transform .25s;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .footer-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 8px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-emoji">🚀💡</div>
+    <h1>科技创新工作室</h1>
+    <div class="slogan">锐意创新 · 迎接挑战</div>
+    <div class="tagline">校团委直属学生组织 · 招新进行中</div>
+    <a class="scroll-hint" href="#join">立即报名 ↓</a>
+  </div>
+
+  <div class="wrap">
+    <!-- 简介 -->
+    <section id="about">
+      <div class="section-title">📖 我们是谁</div>
+      <div class="section-sub">在校团委直接领导下，为全校同学搭建创新创业实践平台</div>
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="ic-emoji">🎯</div>
+          <div class="ic-label">宗旨</div>
+          <div class="ic-text">提高学生科创创业能力，服务学校科创工作</div>
+        </div>
+        <div class="intro-card">
+          <div class="ic-emoji">⚡</div>
+          <div class="ic-label">理念</div>
+          <div class="ic-text">锐意创新，迎接挑战</div>
+        </div>
+        <div class="intro-card">
+          <div class="ic-emoji">🌱</div>
+          <div class="ic-label">中心</div>
+          <div class="ic-text">营造浓厚的科创与创业文化氛围</div>
+        </div>
+        <div class="intro-card">
+          <div class="ic-emoji">🎪</div>
+          <div class="ic-label">目标</div>
+          <div class="ic-text">开展丰富多样的科创实践活动</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 数据 -->
+    <section>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-value">70</div><div class="stat-label">社团总人数</div></div>
+        <div class="stat"><div class="stat-value">4</div><div class="stat-label">职能部门</div></div>
+        <div class="stat"><div class="stat-value">🏆</div><div class="stat-label">挑战杯等赛事</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 组织架构 -->
+    <section id="org">
+      <div class="section-title">🏗️ 组织架构</div>
+      <div class="section-sub">主席团统筹，四部门协同运转</div>
+      <div class="org-tree">
+        <div class="org-node">主席团 · 2 人</div>
+        <div class="org-line"></div>
+        <div class="org-children">
+          <div class="org-child">综合事务部</div>
+          <div class="org-child">赛事运营部</div>
+          <div class="org-child">项目活动部</div>
+          <div class="org-child">宣传推广部</div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-header"><div class="dept-icon">📋</div><div class="dept-name">综合事务部</div><div class="dept-size">17 人</div></div>
+        <div class="dept-desc">社团核心内务统筹部门，负责日常运转保障。</div>
+        <ul class="duty-list">
+          <li>例会组织、日常考勤、值班安排、人员考核评定</li>
+          <li>文件整理、资料归档、活动报备、工作总结撰写</li>
+          <li>物资台账、基础经费统计、内部制度落实</li>
+        </ul>
+      </div>
+
+      <div class="dept">
+        <div class="dept-header"><div class="dept-icon">🏅</div><div class="dept-name">赛事运营部</div><div class="dept-size">17 人</div></div>
+        <div class="dept-desc">负责全校各类科创竞赛的落地统筹。</div>
+        <ul class="duty-list">
+          <li>赛事通知发布、全校报名与材料收集初审</li>
+          <li>场地布置、参赛答疑、答辩会务组织</li>
+          <li>赛后数据统计、获奖信息整理、赛事复盘</li>
+        </ul>
+      </div>
+
+      <div class="dept">
+        <div class="dept-header"><div class="dept-icon">💡</div><div class="dept-name">项目活动部</div><div class="dept-size">17 人</div></div>
+        <div class="dept-desc">聚焦创新创业项目培育与科创氛围建设。</div>
+        <ul class="duty-list">
+          <li>大创项目申报、中期检查、结题验收全程跟进</li>
+          <li>组织创新创业分享沙龙、经验交流会</li>
+          <li>开展零基础科创培训，打磨孵化优质项目</li>
+        </ul>
+      </div>
+
+      <div class="dept">
+        <div class="dept-header"><div class="dept-icon">📢</div><div class="dept-name">宣传推广部</div><div class="dept-size">17 人</div></div>
+        <div class="dept-desc">负责社团对外宣传、品牌建设与氛围营造。</div>
+        <ul class="duty-list">
+          <li>活动摄影、公众号运营、推文新闻稿编辑</li>
+          <li>海报设计、短视频拍摄与剪辑</li>
+          <li>科创技能培训、成果宣传、打造校级特色品牌</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 报名 -->
+    <section id="join">
+      <div class="section-title">✍️ 加入我们</div>
+      <div class="section-sub">填写报名表，选择意向部门，我们会尽快联系你</div>
+      <div class="form-card">
+        <form id="joinForm">
+          <div class="field">
+            <label for="name">姓名 *</label>
+            <input type="text" id="name" name="name" placeholder="请输入你的姓名" required>
+          </div>
+          <div class="field">
+            <label for="major">学院 / 专业 *</label>
+            <input type="text" id="major" name="major" placeholder="如：电子信息学院 通信工程" required>
+          </div>
+          <div class="field">
+            <label for="phone">手机号 *</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+          </div>
+          <div class="field">
+            <label>意向部门 *</label>
+            <div class="dept-options">
+              <div class="dept-option"><input type="radio" name="dept" id="d1" value="综合事务部" required><label for="d1">📋 综合事务部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d2" value="赛事运营部"><label for="d2">🏅 赛事运营部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d3" value="项目活动部"><label for="d3">💡 项目活动部</label></div>
+              <div class="dept-option"><input type="radio" name="dept" id="d4" value="宣传推广部"><label for="d4">📢 宣传推广部</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="reason">加入理由 / 个人优势</label>
+            <textarea id="reason" name="reason" placeholder="简单说说你为什么想加入我们"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">提交报名表 💕</button>
+        </form>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-title">更多联系方式</div>
+        <div class="contact-row">
+          <span class="contact-label">招新 QQ 群</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value" id="qqGroup">123456789</span>
+            <button class="copy-btn" data-target="qqGroup">复制</button>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">负责人微信</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value" id="wechat">xxxxxx</span>
+            <button class="copy-btn" data-target="wechat">复制</button>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">负责人电话</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="contact-value">138-0000-0000</span>
+            <a class="copy-btn" href="tel:13800000000">拨打</a>
+          </div>
+        </div>
+        <div class="footer-note">报名信息仅用于社团招新联系，不会对外公开 🔒</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="#join">立即报名 🚀</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    function show(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    document.querySelectorAll('.copy-btn[data-target]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = document.getElementById(btn.dataset.target).textContent;
+        navigator.clipboard.writeText(text).then(() => show('已复制：' + text)).catch(() => show(text));
+      });
+    });
+
+    document.getElementById('joinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      console.log('报名表数据：', data);
+      show('报名提交成功！我们会尽快联系你 💕');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

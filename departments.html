@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>四大部门 · 科技创新工作室</title>
+  <meta name="description" content="科技创新工作室四大部门：综合事务部、赛事运营部、项目活动部、宣传推广部，总有一款适合你。">
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    section { padding: 32px 24px; position: relative; }
+
+    .topnav {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(255,245,248,0.92); backdrop-filter: blur(8px);
+      display: flex; gap: 6px; padding: 10px 12px; justify-content: center;
+      border-bottom: 1px solid rgba(255,209,220,0.6);
+    }
+    .topnav a {
+      flex: 1; max-width: 110px; text-align: center; padding: 9px 4px; border-radius: var(--radius-full);
+      font-size: 13.5px; font-weight: 700; text-decoration: none; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--secondary); transition: all .15s ease;
+    }
+    .topnav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .back-hero { text-align: center; padding: 28px 24px 6px; }
+    .back-hero .emoji { font-size: 54px; }
+    h1 { font-size: 26px; font-weight: 800; margin-top: 6px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 18px; text-align: center; }
+
+    .dept-detail {
+      background: var(--surface); border-radius: var(--radius-lg); padding: 22px;
+      margin-bottom: 16px; box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      border: 1px solid rgba(255,209,220,0.5);
+    }
+    .dept-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .dept-icon {
+      width: 54px; height: 54px; border-radius: 16px; background: var(--secondary);
+      display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0;
+    }
+    .dept-name { font-size: 18px; font-weight: 800; }
+    .dept-tag { font-size: 12.5px; color: var(--muted); }
+    .dept-block { margin-bottom: 12px; }
+    .dept-block:last-child { margin-bottom: 0; }
+    .dept-block .label { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .dept-block p { font-size: 14px; line-height: 1.6; color: var(--muted); }
+    .pick-btn {
+      display: inline-block; margin-top: 14px; padding: 10px 22px; border-radius: var(--radius-full);
+      background: var(--secondary); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 700;
+    }
+
+    .footer-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; padding: 14px 22px 22px;
+      background: linear-gradient(transparent, var(--bg) 50%); display: flex; gap: 12px; justify-content: center; z-index: 10;
+    }
+    .footer-cta .btn { flex: 1; max-width: 260px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 15px 30px; border-radius: var(--radius-full); text-decoration: none; font-size: 16px; font-weight: 700; transition: transform .15s ease; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 28px rgba(199,58,106,0.28); }
+    .spacer { height: 90px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="v1-cute.html" data-page="home">🏠 首页</a>
+    <a href="about.html" data-page="about">💡 了解</a>
+    <a href="departments.html" data-page="dept">📋 部门</a>
+    <a href="join.html" data-page="join">✍️ 报名</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="back-hero">
+      <div class="emoji">📋</div>
+      <h1>四大部门</h1>
+      <div class="section-sub">点卡片里的"选这个部门"可直接预选报名</div>
+    </div>
+
+    <section class="reveal">
+      <div class="dept-detail">
+        <div class="dept-head"><div class="dept-icon">📋</div><div><div class="dept-name">综合事务部</div><div class="dept-tag">社团运转的大管家</div></div></div>
+        <div class="dept-block"><div class="label">主要职责</div><p>例会考勤、资料归档、物资与经费管理，保障工作室日常高效运转。</p></div>
+        <div class="dept-block"><div class="label">你将收获</div><p>扎实的统筹与执行力，懂流程、会协作，是简历里的"靠谱担当"。</p></div>
+        <a class="pick-btn" href="join.html?dept=综合事务部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-head"><div class="dept-icon">🏅</div><div><div class="dept-name">赛事运营部</div><div class="dept-tag">竞赛一线的组织者</div></div></div>
+        <div class="dept-block"><div class="label">主要职责</div><p>挑战杯、大创等赛事的报名组织、流程跟进与现场执行。</p></div>
+        <div class="dept-block"><div class="label">你将收获</div><p>贴近竞赛一线，懂规则、会组织，结识全校最强的项目团队。</p></div>
+        <a class="pick-btn" href="join.html?dept=赛事运营部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-head"><div class="dept-icon">💡</div><div><div class="dept-name">项目活动部</div><div class="dept-tag">把创意变成项目</div></div></div>
+        <div class="dept-block"><div class="label">主要职责</div><p>项目孵化、沙龙培训、经验分享活动的策划与落地执行。</p></div>
+        <div class="dept-block"><div class="label">你将收获</div><p>锻炼产品思维与协作能力，从想法到作品全程参与。</p></div>
+        <a class="pick-btn" href="join.html?dept=项目活动部">选这个部门 →</a>
+      </div>
+
+      <div class="dept-detail">
+        <div class="dept-head"><div class="dept-icon">📢</div><div><div class="dept-name">宣传推广部</div><div class="dept-tag">社团的声音与门面</div></div></div>
+        <div class="dept-block"><div class="label">主要职责</div><p>摄影、推文、海报、视频与品牌运营，讲好社团故事。</p></div>
+        <div class="dept-block"><div class="label">你将收获</div><p>设计与传播硬实力，作品可见、可累积，越做越有底气。</p></div>
+        <a class="pick-btn" href="join.html?dept=宣传推广部">选这个部门 →</a>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn btn-primary" href="join.html">立即报名 🚀</a>
+  </div>
+
+  <script>
+    (function () {
+      var qs = location.search;
+      document.querySelectorAll('a[href]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (h && !h.startsWith('http') && !h.startsWith('tel:') && !h.startsWith('#') && !h.startsWith('mailto:') && !h.startsWith('javascript:')) {
+          if (qs && h.indexOf('?') === -1) a.setAttribute('href', h + qs);
+        }
+      });
+      // 部门"选这个部门"按钮已带 ?dept=，但也要补上预览 token
+      document.querySelectorAll('a.pick-btn').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (qs && h.indexOf('eo_token') === -1) a.setAttribute('href', h + (h.indexOf('?') === -1 ? qs : '&' + qs.replace(/^\?/, '')));
+      });
+      var path = location.pathname.split('/').pop() || 'departments.html';
+      var map = { 'v1-cute.html': 'home', 'about.html': 'about', 'departments.html': 'dept', 'join.html': 'join' };
+      var cur = map[path];
+      if (cur) { var el = document.querySelector('.topnav a[data-page="' + cur + '"]'); if (el) el.classList.add('active'); }
+    })();
+    var reveals = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  </script>
+</body>
+</html>

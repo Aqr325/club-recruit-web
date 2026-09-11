@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>科技创新工作室 · 招新方案</title>
+  <style>
+    :root {
+      --primary: #c73a6a;
+      --primary-light: #ff6b9d;
+      --secondary: #ffd1dc;
+      --tertiary: #ff9a3c;
+      --bg: #fff5f8;
+      --surface: #ffffff;
+      --text: #3d2c33;
+      --muted: #8a6e78;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 32px 22px 120px; }
+    .hero { text-align: center; padding: 40px 0; }
+    .badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+      letter-spacing: 0.06em;
+    }
+    h1 { font-size: 34px; line-height: 1.15; font-weight: 800; margin-bottom: 14px; }
+    .lead { color: var(--muted); font-size: 16px; line-height: 1.65; margin-bottom: 36px; }
+    .versions { display: flex; flex-direction: column; gap: 18px; }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(199,58,106,0.08);
+      border: 1px solid rgba(255,209,220,0.5);
+    }
+    .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .card h2 { font-size: 20px; font-weight: 700; }
+    .card p { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 8px 0 18px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 22px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .15s ease;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(199,58,106,0.25);
+    }
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--text);
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 22px 24px;
+      background: linear-gradient(transparent, var(--bg) 45%);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">科技创新工作室 · 2026 招新</div>
+      <h1>扫码选一种<br>加入我们的方式</h1>
+      <p class="lead">延续海报粉色可爱风，出了三个不同侧重点的招新落地页，挑一个今晚就能印到海报二维码上。</p>
+    </div>
+
+    <div class="versions">
+      <article class="card">
+        <div class="card-top"><div class="icon">🐰</div><h2>粉萌招新版</h2></div>
+        <p>大图 emoji、口号式文案、情感种草，适合在食堂/宿舍楼下快速抓住新生眼球。</p>
+        <a class="btn btn-primary" href="v1-cute.html">预览版本 1 →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="icon">🧩</div><h2>组织架构版</h2></div>
+        <p>清晰展示主席团 + 四部门 + 70 人规模 + 岗位职责，适合想认真了解社团的同学。</p>
+        <a class="btn btn-primary" href="v2-structure.html">预览版本 2 →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="icon">📝</div><h2>互动报名表</h2></div>
+        <p>直接填写意向部门、联系方式，一键复制群号/加 QQ，转化路径最短。</p>
+        <a class="btn btn-primary" href="v3-form.html">预览版本 3 →</a>
+      </article>
+    </div>
+  </div>
+
+  <footer>科技创新工作室 · 校团委直属</footer>
+</body>
+</html>
