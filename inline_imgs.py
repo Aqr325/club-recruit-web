@@ -6,10 +6,10 @@ def to_datauri(p):
     with open(p,"rb") as f:
         return "data:%s;base64,%s" % (mime, base64.b64encode(f.read()).decode())
 assets = {
-    "assets/consult-qq-group.jpg": os.path.join(base,"assets","consult-qq-group.jpg"),
+    "assets/consult-qq-group.jpg": os.path.join(base,"assets","wechat-group.jpg"),
     "assets/signup-qr.png": os.path.join(base,"assets","signup-qr.png"),
     "assets/wjx-qr.png": os.path.join(base,"assets","wjx-qr.png"),
-    "assets/qq-group.jpg": os.path.join(base,"assets","qq-group.jpg"),
+    "assets/qq-group.jpg": os.path.join(base,"assets","wechat-group.jpg"),
 }
 data = {}
 for k,p in assets.items():
